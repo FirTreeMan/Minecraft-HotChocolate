@@ -36,12 +36,24 @@ public class HotChocolateItem extends Item {
             }
          }
 
-        if (pEntityLiving instanceof Player && !((Player)pEntityLiving).getAbilities().instabuild) {
+        boolean notCreative = pEntityLiving instanceof Player player && !player.getAbilities().instabuild;
+        Player player = null;
+
+        if (notCreative) {
+            player = (Player) pEntityLiving;
             pStack.shrink(1);
         }
 
         pEntityLiving.gameEvent(GameEvent.EAT);
 
+        if (pStack.isEmpty())
+            return new ItemStack(Items.GLASS_BOTTLE);
+        else if (notCreative) {
+            ItemStack itemstack = new ItemStack(Items.GLASS_BOTTLE);
+            if (!player.getInventory().add(itemstack)) {
+                player.drop(itemstack, false);
+            }
+        }
         return pStack;
     }
 
