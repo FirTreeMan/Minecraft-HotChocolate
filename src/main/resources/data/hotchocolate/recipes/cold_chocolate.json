@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:milk_bucket"
+    },
+    "C": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "pattern": [
+    "BCB",
+    "CMC",
+    "BCB"
+  ],
+  "result": {
+    "count": 4,
+    "item": "hotchocolate:cold_chocolate"
+  },
+  "show_notification": true
+}
