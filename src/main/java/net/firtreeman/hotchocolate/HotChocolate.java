@@ -35,7 +35,7 @@ public class HotChocolate {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     public static final RegistryObject<Item> HOT_CHOCOLATE = ITEMS.register("hot_chocolate", () -> new HotChocolateItem(new Item.Properties().stacksTo(16).food(
-            (new FoodProperties.Builder()).nutrition(5).saturationMod(5.0F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0), 1.0F).build()
+            (new FoodProperties.Builder()).nutrition(5).saturationMod(5.0F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 0), 1.0F).build()
     )));
     public static final RegistryObject<Item> COLD_CHOCOLATE = ITEMS.register("cold_chocolate", () -> new ColdChocolateItem(new Item.Properties().stacksTo(16).food(
             (new FoodProperties.Builder()).nutrition(2).saturationMod(1.0F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 0), 1.0F).build()
